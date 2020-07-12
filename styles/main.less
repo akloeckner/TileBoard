@@ -66,6 +66,7 @@
 @POPUP: rgb(68, 116, 156);
 @DIMMER_SWITCH: rgb(130, 156, 108);
 @IMAGE: rgb(37, 158, 176);
+@HISTORY: rgb(45, 49, 53);
 
 .item {
    &.-th-transparent {background-color: @TRANSPARENT;}
@@ -117,6 +118,7 @@
    &.-th-popup {background-color: @POPUP;}
    &.-th-dimmer_switch {background-color: @DIMMER_SWITCH;}
    &.-th-image {background-color: @IMAGE;}    
+   &.-th-history {background-color: @HISTORY;}
 }
 
 
@@ -1107,7 +1109,17 @@ body {
 
 .item-gauge {
    padding-top: 10px;
- }
+}
+
+.item-history,
+.item-history--placeholder,
+.item-history--canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 
 .clock, clock {
    div {
