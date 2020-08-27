@@ -419,3 +419,13 @@ App.directive('ngMax', function() {
       },
    };
 })
+
+// Custom directive to prevent ghost clicks
+App.directive('preventGhostClick', function() {
+   return {
+      restrict: 'A',
+      link: function(scope, elem, attr) {
+         PreventGhostClick(elem);
+      }
+   };
+})

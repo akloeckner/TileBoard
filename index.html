@@ -44,6 +44,7 @@
          'scripts/vendors/angular.min.js',
          'scripts/vendors/hammer.js',
          'scripts/vendors/angular.hammer.js',
+         'scripts/vendors/PreventGhostClick.js',
          'scripts/vendors/color-picker.js',
          'scripts/vendors/angularjs-gauge.js',
          'scripts/vendors/moment.min.js', // Required by Chart.js for time axes
@@ -495,6 +496,7 @@
    <div ng-style="itemStyles(page, item, entity)" class="item"
         ng-click="entityClick(page, item, entity)"
         hm-press="entityLongPress($event, page, item, entity)"
+        prevent-ghost-click
         hm-recognizer-options="{time: 600}"
         ng-if="(entity = getItemEntity(item)) && !isHidden(item, entity)"
         ng-class="itemClasses(item)">
