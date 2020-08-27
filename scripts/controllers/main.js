@@ -35,6 +35,8 @@ App.controller('Main', ['$scope', '$timeout', '$location', 'Api', function ($sco
    var cameraList = null;
    var popupIframeStyles = {};
 
+   var ghostCoordinates = [];
+
    $scope.entityClick = function (page, item, entity) {
       if(typeof item.action === "function") {
          return callFunction(item.action, [item, entity]);
@@ -78,6 +80,8 @@ App.controller('Main', ['$scope', '$timeout', '$location', 'Api', function ($sco
    };
 
    $scope.entityLongPress = function ($event, page, item, entity) {
+      addGhost([$event.changedPointers[0].clientX, $event.changedPointers[0].clientY]);
+
       if(typeof item.secondaryAction === "function") {
          return callFunction(item.secondaryAction, [item, entity]);
       }
@@ -2391,4 +2395,34 @@ App.controller('Main', ['$scope', '$timeout', '$location', 'Api', function ($sco
          pingConnection();
       });
    }
+
+   function addGhost (coordinates) {
+      var timeout = 500;
+      ghostCoordinates.push(coordinates);
+      $timeout(popGhost, timeout);
+//alert(ghostCoordinates);
+   }
+
+   function popGhost() {
+//alert(ghostCoordinates);
+      ghostCoordinates.splice(0, 1);
+   }
+
+   function preventGhostClick ($event) {
+//alert(ghostCoordinates);
+      var threshold = 25;
+      for (var i = 0; i < ghostCoordinates.length; i++) {
+         var x = ghostCoordinates[i][0];
+         var y = ghostCoordinates[i][1];
+
+         // within the range, so prevent the click
+         if (Math.abs($event.clientX - x) < threshold && Math.abs($event.clientY - y) < threshold) {
+            $event.stopPropagation();
+            $event.preventDefault();
+            break;
+         }
+      }
+   }
+   document.addEventListener("click", preventGhostClick, true);
+
 }]);
