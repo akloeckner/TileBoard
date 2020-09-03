@@ -68,6 +68,11 @@ var CONFIG = {
     * If enabled, will print info about state changes and entities to console.
     */
    debug: Boolean,
+   /* ignoreErrors: suppress all errors or selected error IDs
+    */
+   ignoreErrors: true,
+   ignoreErrors: {all: true},
+   ignoreErrors: {myid: true},
    /* timeFormat: 12 for AM/PM marker, 24 for 24 hour time (default) */
    timeFormat: Number,
    

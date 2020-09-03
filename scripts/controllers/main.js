@@ -521,6 +521,11 @@ App.controller('Main', ['$scope', '$timeout', '$location', 'Api', function ($sco
       return getItemFieldValue(field, item, entity);
    };
 
+   $scope.itemCustomHtml = function (item, entity) {
+      warnConfigUpdated(412, 'The <code>customHtml</code> option now supports templates. Please check your tiles for undesired output.');
+      return getItemFieldValue ('customHtml', item, entity)
+   };
+
    $scope.entityUnit = function (item, entity) {
       if(!('unit' in item)) {
          return entity.attributes ? entity.attributes.unit_of_measurement : null;
@@ -2294,25 +2299,51 @@ App.controller('Main', ['$scope', '$timeout', '$location', 'Api', function ($sco
       updateView();
    }
 
+   function shouldShowError (id) {
+     if (!CONFIG.ignoreErrors) return true;
+     if (CONFIG.ignoreErrors === true) return false;
+     if (CONFIG.ignoreErrors['all']) return false;
+     if (CONFIG.ignoreErrors[id]) return false;
+     return true
+   }
+
    function addError (error) {
-      if(!CONFIG.ignoreErrors) Noty.addObject({
-         type: Noty.ERROR,
-         title: 'Error',
-         message: error,
-         lifetime: 10
-      });
+      if (shouldShowError('all')) {
+         Noty.addObject({
+            type: Noty.ERROR,
+            title: 'Error',
+            message: error,
+            lifetime: 10
+         });
+      }
+   }
+
+   function notyOnce(object) {
+      if (shouldShowError(object.id) && !Noty.hasSeenNoteId(object.id)) {
+         Noty.addObject(object);
+      }
    }
 
    function warnUnknownItem(item) {
-      var notyId = item.id + '_not_found';
-      if(!CONFIG.ignoreErrors && !Noty.hasSeenNoteId(notyId)) {
-         Noty.addObject({
-            type: Noty.WARNING,
-            title: 'Entity not found',
-            message: 'Entity "' + item.id + '" not found',
-            id: notyId
-         });
-      }
+      notyOnce({
+         type: Noty.WARNING,
+         title: 'Entity not found',
+         message: 'Entity "' + item.id + '" not found',
+         id: item.id + '_not_found'
+      });
+   }
+
+   function warnConfigUpdated(pr, message, id) {
+      var notyId = id ? id : pr;
+      var defaultMessage = 'You are using CONFIG options, whose syntax recently changed.';
+      var githubMessage = ' See the discussion on <a href="https://github.com/resoai/TileBoard/pull/' + pr + '">Github</a> for more details.';
+      var disableMessage = ' You can disable this warning by setting <code>CONFIG.ignoreErrors[\'' + notyId + '\'] = true</code>.';
+      notyOnce({
+         type: Noty.WARNING,
+         title: 'Configuration syntax updated',
+         message: (message ? message : defaultMessage) + githubMessage + disableMessage,
+         id: notyId
+      });
    }
 
    function debugLog () {
