@@ -1,4 +1,5 @@
-/*
+<!-- vim: syntax=Markdown -->
+ /*
  This is an example configuration file.
 
  COPY OR RENAME THIS FILE TO config.js.
