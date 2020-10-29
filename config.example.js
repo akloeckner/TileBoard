@@ -17,6 +17,13 @@ Make sure you use real IDs from your HA entities.
 ```js 
 */
 var CONFIG = {
+/*
+```
+
+### Basic appearance settings
+
+```js
+/*
 
    /* customTheme: Specify a custom theme for your dashboard
     * Valid options: null, CUSTOM_THEMES.TRANSPARENT, CUSTOM_THEMES.MATERIAL, CUSTOM_THEMES.MOBILE, CUSTOM_THEMES.COMPACT, CUSTOM_THEMES.HOMEKIT, CUSTOM_THEMES.WINPHONE, CUSTOM_THEMES.WIN95 or a custom theme you have created
@@ -37,7 +44,13 @@ var CONFIG = {
     * valid option: ENTITY_SIZES.NORMAL, ENTITY_SIZES.SMALL, ENTITY_SIZES.BIG
     */
    entitySize: ENTITY_SIZES.NORMAL,
+/*
+```
 
+### Connection settings
+
+```js
+/*
    serverUrl: 'http://' + location.hostname + ':8123',
    wsUrl: 'ws://' + location.hostname + ':8123/api/websocket',
    authToken: null, // optional long-lived token (CAUTION: only if TileBoard is not exposed to the internet)
