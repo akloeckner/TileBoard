@@ -11,7 +11,7 @@ Make sure you use real IDs from your HA entities.
 2. [Structure of a TileBoard layout](#structure-of-a-tileboard-layout)
 
 ## General options
-<sup>[back to top](#table-of-contents)</sup>
+<sup>[back to toc](#table-of-contents)</sup>
 
 `config.js` will initialize a global `CONFIG` object with the following fields to influence general behavior:
 
@@ -21,7 +21,31 @@ var CONFIG = {
 /*
 ```
 
+### Connection settings
+<sup>[back to toc](#table-of-contents)</sup>
+
+```js
+/*
+   serverUrl: 'http://' + location.hostname + ':8123',
+   wsUrl: 'ws://' + location.hostname + ':8123/api/websocket',
+   authToken: null, // optional long-lived token (CAUTION: only if TileBoard is not exposed to the internet)
+   //googleApiKey: "XXXXXXXXXX", // Required if you are using Google Maps for device tracker
+   //mapboxToken: "XXXXXXXXXX", // Required if you are using Mapbox for device tracker
+   debug: false, // Prints entities and state change info to the console.
+   pingConnection: true, //ping connection to prevent silent disconnections
+
+   // next fields are optional
+   events: [],
+   timeFormat: 24,
+   menuPosition: MENU_POSITIONS.LEFT, // or BOTTOM
+   hideScrollbar: false, // horizontal scrollbar
+   groupsAlign: GROUP_ALIGNS.HORIZONTALLY, // or VERTICALLY
+   onReady: function () {},
+/*
+```
+
 ### Basic appearance settings
+<sup>[back to toc](#table-of-contents)</sup>
 
 ```js
 /*
@@ -48,29 +72,8 @@ var CONFIG = {
 /*
 ```
 
-### Connection settings
-
-```js
-/*
-   serverUrl: 'http://' + location.hostname + ':8123',
-   wsUrl: 'ws://' + location.hostname + ':8123/api/websocket',
-   authToken: null, // optional long-lived token (CAUTION: only if TileBoard is not exposed to the internet)
-   //googleApiKey: "XXXXXXXXXX", // Required if you are using Google Maps for device tracker
-   //mapboxToken: "XXXXXXXXXX", // Required if you are using Mapbox for device tracker
-   debug: false, // Prints entities and state change info to the console.
-   pingConnection: true, //ping connection to prevent silent disconnections
-
-   // next fields are optional
-   events: [],
-   timeFormat: 24,
-   menuPosition: MENU_POSITIONS.LEFT, // or BOTTOM
-   hideScrollbar: false, // horizontal scrollbar
-   groupsAlign: GROUP_ALIGNS.HORIZONTALLY, // or VERTICALLY
-   onReady: function () {},
-/*
-```
-
 ## Structure of a TileBoard layout
+<sup>[back to toc](#table-of-contents)</sup>
 
 The following fields are used to influence the actual appearance of your TileBoard:
 
