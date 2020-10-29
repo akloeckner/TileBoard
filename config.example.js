@@ -7,11 +7,11 @@ This is a documented example configuration file.
 Make sure you use real IDs from your HA entities.
 
 # Table of contents
-1. [General options](#general-options)
-2. [Structure of a TileBoard layout](#structure-of-a-tileboard-layout)
+1. [General options](#general-options-back-to-toc)
+2. [Structure of a TileBoard layout](#structure-of-a-tileboard-layout-back-to-toc)
 
-## General options
-<sup>[back to toc](#table-of-contents)</sup>
+## General options <sup>[back to toc](#table-of-contents)</sup>
+
 
 `config.js` will initialize a global `CONFIG` object with the following fields to influence general behavior:
 
@@ -21,8 +21,7 @@ var CONFIG = {
 /*
 ```
 
-### Connection settings
-<sup>[back to toc](#table-of-contents)</sup>
+### Connection settings <sup>[back to toc](#table-of-contents)</sup>
 
 ```js
 /*
@@ -44,8 +43,7 @@ var CONFIG = {
 /*
 ```
 
-### Basic appearance settings
-<sup>[back to toc](#table-of-contents)</sup>
+### Basic appearance settings <sup>[back to toc](#table-of-contents)</sup>
 
 ```js
 /*
@@ -72,8 +70,7 @@ var CONFIG = {
 /*
 ```
 
-## Structure of a TileBoard layout
-<sup>[back to toc](#table-of-contents)</sup>
+## Structure of a TileBoard layout <sup>[back to toc](#table-of-contents)</sup>
 
 The following fields are used to influence the actual appearance of your TileBoard:
 
