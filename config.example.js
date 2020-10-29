@@ -31,10 +31,8 @@ var CONFIG = {
    pingConnection: true, //ping connection to prevent silent disconnections
 /*
 ```
-
-#### :warning: Security advice <sup>[back to toc](#table-of-contents)</sup>
-The following authentication info will be readable in the source code. So, make sure you are either not using it, or, your TileBoard is not exposed to untrusted persons (e.g. on the internet)!
-
+> :warning: **Security advice**:
+> The following authentication info will be readable in the source code. So, make sure you are either not using it, or, your TileBoard is not exposed to untrusted persons (e.g. on the internet)!
 ```js
 /*
    authToken: null, // optional long-lived token (CAUTION: only if TileBoard is not exposed to the internet)
