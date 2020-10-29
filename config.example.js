@@ -1,12 +1,16 @@
 /*<!-- vim: syntax=Markdown -->
- This is an example configuration file.
+# Example configuration file
+This is a documented example configuration file.
 
- COPY OR RENAME THIS FILE TO config.js.
+**COPY OR RENAME THIS FILE TO `config.js` to get a starting point for your configuration.**
 
- Make sure you use real IDs from your HA entities.
+Make sure you use real IDs from your HA entities.
 
-```
-*/
+## Global configuration basics
+
+`config.js` will initialize a global `CONFIG` object with the following fields to influence general behavior:
+
+```js */
 var CONFIG = {
    customTheme: null, // CUSTOM_THEMES.TRANSPARENT, CUSTOM_THEMES.MATERIAL, CUSTOM_THEMES.MOBILE, CUSTOM_THEMES.COMPACT, CUSTOM_THEMES.HOMEKIT, CUSTOM_THEMES.WINPHONE, CUSTOM_THEMES.WIN95
    transition: TRANSITIONS.ANIMATED_GPU, //ANIMATED or SIMPLE (better perfomance)
@@ -28,6 +32,43 @@ var CONFIG = {
    hideScrollbar: false, // horizontal scrollbar
    groupsAlign: GROUP_ALIGNS.HORIZONTALLY, // or VERTICALLY
    onReady: function () {},
+/*
+```
+
+## Core configuration of TileBoard layout
+
+The following fields are used to influence the actual appearance of your TileBoard:
+
+```js */
+
+   /* pages: A list of page objects. See documentation on Pages below */
+   pages: [],
+   /* events: A list of events. See documentation on Events below */
+   events: [],
+   /* screensaver: A digital picture frame with a clock. Appears when    
+    * the dashboard has been idle
+    * https://github.com/resoai/TileBoard/wiki/Screensaver-configuration
+    * (optional)
+    */
+   screensaver: { },
+   
+   /* header: object of header. Will be applied globally
+    * https://github.com/resoai/TileBoard/wiki/Header-configuration
+    * (optional)
+    */
+   header: DEFAULT_HEADER,
+
+/*
+```
+
+### Pages
+
+Page object can have the following fields:
+
+```js */
+
+
+
 
    header: { // https://github.com/resoai/TileBoard/wiki/Header-configuration
       styles: {
