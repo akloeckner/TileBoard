@@ -27,6 +27,8 @@ var CONFIG = {
 /*
    serverUrl: 'http://' + location.hostname + ':8123',
    wsUrl: 'ws://' + location.hostname + ':8123/api/websocket',
+   debug: false, // Prints entities and state change info to the console.
+   pingConnection: true, //ping connection to prevent silent disconnections
 /*
 ```
 
@@ -38,16 +40,6 @@ The following authentication info will be readable in the source code. So, make 
    authToken: null, // optional long-lived token (CAUTION: only if TileBoard is not exposed to the internet)
    //googleApiKey: "XXXXXXXXXX", // Required if you are using Google Maps for device tracker
    //mapboxToken: "XXXXXXXXXX", // Required if you are using Mapbox for device tracker
-   debug: false, // Prints entities and state change info to the console.
-   pingConnection: true, //ping connection to prevent silent disconnections
-
-   // next fields are optional
-   events: [],
-   timeFormat: 24,
-   menuPosition: MENU_POSITIONS.LEFT, // or BOTTOM
-   hideScrollbar: false, // horizontal scrollbar
-   groupsAlign: GROUP_ALIGNS.HORIZONTALLY, // or VERTICALLY
-   onReady: function () {},
 /*
 ```
 
@@ -55,6 +47,10 @@ The following authentication info will be readable in the source code. So, make 
 
 ```js
 /*
+   timeFormat: 24,
+   menuPosition: MENU_POSITIONS.LEFT, // or BOTTOM
+   hideScrollbar: false, // horizontal scrollbar
+   groupsAlign: GROUP_ALIGNS.HORIZONTALLY, // or VERTICALLY
 
    /* customTheme: Specify a custom theme for your dashboard
     * Valid options: null, CUSTOM_THEMES.TRANSPARENT, CUSTOM_THEMES.MATERIAL, CUSTOM_THEMES.MOBILE, CUSTOM_THEMES.COMPACT, CUSTOM_THEMES.HOMEKIT, CUSTOM_THEMES.WINPHONE, CUSTOM_THEMES.WIN95 or a custom theme you have created
@@ -75,6 +71,17 @@ The following authentication info will be readable in the source code. So, make 
     * valid option: ENTITY_SIZES.NORMAL, ENTITY_SIZES.SMALL, ENTITY_SIZES.BIG
     */
    entitySize: ENTITY_SIZES.NORMAL,
+   
+/*
+```
+
+### Global interactive elements <sup>[back to toc](#table-of-contents)</sup>
+
+```js
+/*
+   /* events: A list of events. See documentation on Events below */
+   events: [],
+   onReady: function () {},
 /*
 ```
 
@@ -87,8 +94,6 @@ The following fields are used to influence the actual appearance of your TileBoa
 
    /* pages: A list of page objects. See documentation on Pages below */
    pages: [],
-   /* events: A list of events. See documentation on Events below */
-   events: [],
    /* screensaver: A digital picture frame with a clock. Appears when    
     * the dashboard has been idle
     * https://github.com/resoai/TileBoard/wiki/Screensaver-configuration
