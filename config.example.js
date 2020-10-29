@@ -1,4 +1,4 @@
-<!-- vim: syntax=Markdown -->
+//<!-- vim: syntax=Markdown -->
  /*
  This is an example configuration file.
 
