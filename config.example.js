@@ -17,11 +17,27 @@ Make sure you use real IDs from your HA entities.
 ```js 
 */
 var CONFIG = {
-   customTheme: null, // CUSTOM_THEMES.TRANSPARENT, CUSTOM_THEMES.MATERIAL, CUSTOM_THEMES.MOBILE, CUSTOM_THEMES.COMPACT, CUSTOM_THEMES.HOMEKIT, CUSTOM_THEMES.WINPHONE, CUSTOM_THEMES.WIN95
-   transition: TRANSITIONS.ANIMATED_GPU, //ANIMATED or SIMPLE (better perfomance)
-   entitySize: ENTITY_SIZES.NORMAL, //SMALL, BIG are available
+
+   /* customTheme: Specify a custom theme for your dashboard
+    * Valid options: null, CUSTOM_THEMES.TRANSPARENT, CUSTOM_THEMES.MATERIAL, CUSTOM_THEMES.MOBILE, CUSTOM_THEMES.COMPACT, CUSTOM_THEMES.HOMEKIT, CUSTOM_THEMES.WINPHONE, CUSTOM_THEMES.WIN95 or a custom theme you have created
+    * Default: null. Array supported
+    */
+   customTheme: null,
+   
+   /* transition: The transition effect used between Pages
+    * Valid options: TRANSITIONS.ANIMATED, TRANSITIONS.ANIMATED_GPU, TRANSITIONS.SIMPLE
+    */
+   transition: TRANSITIONS.ANIMATED_GPU,
+   
+   /* tileSize: The default size (in pixels) of a tile */
    tileSize: 150,
+   /* tileMargin: The default margin (in pixels) between tiles */
    tileMargin: 6,
+   /* entitySize: Size of each tile's content
+    * valid option: ENTITY_SIZES.NORMAL, ENTITY_SIZES.SMALL, ENTITY_SIZES.BIG
+    */
+   entitySize: ENTITY_SIZES.NORMAL,
+
    serverUrl: 'http://' + location.hostname + ':8123',
    wsUrl: 'ws://' + location.hostname + ':8123/api/websocket',
    authToken: null, // optional long-lived token (CAUTION: only if TileBoard is not exposed to the internet)
