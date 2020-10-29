@@ -27,6 +27,14 @@ var CONFIG = {
 /*
    serverUrl: 'http://' + location.hostname + ':8123',
    wsUrl: 'ws://' + location.hostname + ':8123/api/websocket',
+/*
+```
+
+#### :warning: Security advice <sup>[back to toc](#table-of-contents)</sup>
+The following authentication info will be readable in the source code. So, make sure you are either not using it, or, your TileBoard is not exposed to untrusted persons (e.g. on the internet)!
+
+```js
+/*
    authToken: null, // optional long-lived token (CAUTION: only if TileBoard is not exposed to the internet)
    //googleApiKey: "XXXXXXXXXX", // Required if you are using Google Maps for device tracker
    //mapboxToken: "XXXXXXXXXX", // Required if you are using Mapbox for device tracker
