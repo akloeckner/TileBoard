@@ -11,6 +11,7 @@ Make sure you use real IDs from your HA entities.
 2. [Structure of a TileBoard layout](#structure-of-a-tileboard-layout)
 
 ## General options
+<sup>[back to top](#table-of-contents)</sup>
 
 `config.js` will initialize a global `CONFIG` object with the following fields to influence general behavior:
 
