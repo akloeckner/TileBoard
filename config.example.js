@@ -6,7 +6,11 @@ This is a documented example configuration file.
 
 Make sure you use real IDs from your HA entities.
 
-## Global configuration basics
+# Table of contents
+1. [General options](#general-options)
+2. [Structure of a TileBoard layout](#structure-of-a-tileboard-layout)
+
+## General options
 
 `config.js` will initialize a global `CONFIG` object with the following fields to influence general behavior:
 
@@ -36,7 +40,7 @@ var CONFIG = {
 /*
 ```
 
-## Core configuration of TileBoard layout
+## Structure of a TileBoard layout
 
 The following fields are used to influence the actual appearance of your TileBoard:
 
