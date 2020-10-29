@@ -10,7 +10,8 @@ Make sure you use real IDs from your HA entities.
 
 `config.js` will initialize a global `CONFIG` object with the following fields to influence general behavior:
 
-```js */
+```js 
+*/
 var CONFIG = {
    customTheme: null, // CUSTOM_THEMES.TRANSPARENT, CUSTOM_THEMES.MATERIAL, CUSTOM_THEMES.MOBILE, CUSTOM_THEMES.COMPACT, CUSTOM_THEMES.HOMEKIT, CUSTOM_THEMES.WINPHONE, CUSTOM_THEMES.WIN95
    transition: TRANSITIONS.ANIMATED_GPU, //ANIMATED or SIMPLE (better perfomance)
@@ -39,7 +40,8 @@ var CONFIG = {
 
 The following fields are used to influence the actual appearance of your TileBoard:
 
-```js */
+```js 
+*/
 
    /* pages: A list of page objects. See documentation on Pages below */
    pages: [],
@@ -65,7 +67,8 @@ The following fields are used to influence the actual appearance of your TileBoa
 
 Page object can have the following fields:
 
-```js */
+```js 
+*/
 
 
 
@@ -334,4 +337,6 @@ Page object can have the following fields:
       }
    ],
 }
+/*
 ```
+*/
