@@ -191,26 +191,26 @@ Page object can have the following fields:
 ```js 
 */
 {
- position: [0, 3],
- type: TYPES.ALARM,
- title: 'Alarm',
- //id: "alarm_control_panel.home_alarm",
- id: id: { state: 'disarmed' }, // replace it with real string id
- icons: {
-    disarmed: 'mdi-bell-off',
-    pending: 'mdi-bell',
-    armed_home: 'mdi-bell-plus',
-    armed_away: 'mdi-bell',
-    triggered: 'mdi-bell-ring'
- },
- states: {
-    disarmed: 'Disarmed',
-    pending: 'Pending',
-    armed_home: 'Armed home',
-    armed_away: 'Armed away',
-    triggered: 'Triggered'
- }
-}
+   position: [0, 3],
+   type: TYPES.ALARM,
+   title: 'Alarm',
+   //id: "alarm_control_panel.home_alarm",
+   id: id: { state: 'disarmed' }, // replace it with real string id
+   icons: {
+      disarmed: 'mdi-bell-off',
+      pending: 'mdi-bell',
+      armed_home: 'mdi-bell-plus',
+      armed_away: 'mdi-bell',
+      triggered: 'mdi-bell-ring'
+   },
+   states: {
+      disarmed: 'Disarmed',
+      pending: 'Pending',
+      armed_home: 'Armed home',
+      armed_away: 'Armed away',
+      triggered: 'Triggered'
+   }
+},
 /*
 ```
 
