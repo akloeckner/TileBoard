@@ -48,7 +48,11 @@ export function mergeTileConfigs (object, ...sources) {
 }
 
 function mergeTileCustomizer (objValue, srcValue, key) {
-   if (key === 'classes' && Array.isArray(objValue) && Array.isArray(srcValue)) {
-      return objValue.concat(srcValue);
+   if (key === 'classes') {
+      return function (item, entity) {
+         const objValueParsed = this.parseFieldValue(objValue, item, entity);
+         const srcValueParsed = this.parseFieldValue(srcValue, item, entity);
+         return (Array.isArray(objValueParsed) ? objValueParsed : [objValueParsed]).concat(Array.isArray(srcValueParsed) ? srcValueParsed : [srcValueParsed]);
+      };
    }
 }
